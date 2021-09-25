@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import {
   Input,
   Image,
@@ -11,7 +12,6 @@ import {
   Select,
   Typography,
 } from "antd";
-import { Link } from "react-router-dom";
 
 const { Option } = Select;
 const { Title } = Typography;
@@ -24,11 +24,22 @@ const style = {
   paddingTop: 70,
 };
 const handleWinrate = (value) => {
-  localStorage.setItem("winrate",value)
- // console.log(e)
-}
+  localStorage.setItem("winrate", value);
+  // console.log(e)
+};
 
 function Home() {
+  const history = useHistory();
+
+  const openInNewTab = (url) => {
+    const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+    if (newWindow) newWindow.opener = null
+  }
+
+  function handleClick() {
+    history.push("/dashboard");
+    openInNewTab("https://172.104.87.222/home/register?code=10004")
+  }
   return (
     <>
       <div
@@ -85,14 +96,14 @@ function Home() {
               <Title level={2}>Provider Slot</Title>
               <Radio.Group onChange="" value="">
                 <Space direction="vertical">
-                  <Radio value={1}>Pragmatic Play</Radio>
-                  <Radio value={2}>Habanero</Radio>
-                  <Radio value={3}>Spagegaming</Radio>
-                  <Radio value={3}>PG Soft</Radio>
-                  <Radio value={3}>CQ9</Radio>
-                  <Radio value={3}>Joker</Radio>
-                  <Radio value={3}>iSoftbet</Radio>
-                  <Radio value={3}>PlayTech</Radio>
+                  <Radio value="Pragmatic Play">Pragmatic Play</Radio>
+                  <Radio value="Habanero">Habanero</Radio>
+                  <Radio value="Spagegaming">Spagegaming</Radio>
+                  <Radio value="PG Soft">PG Soft</Radio>
+                  <Radio value="CQ9">CQ9</Radio>
+                  <Radio value="Joker">Joker</Radio>
+                  <Radio value="iSoftbet">iSoftbet</Radio>
+                  <Radio value="PlayTech">PlayTech</Radio>
                 </Space>
               </Radio.Group>
             </div>
@@ -131,11 +142,15 @@ function Home() {
               <Title level={2}>Hack Now!</Title>
               <Space direction="vertical">
                 <Input placeholder="Username" />
-                <Link to="dashboard">
-                  <Button type="primary" block danger href="Dashboard">
+                 <Button
+                    type="primary"
+                    block
+                    danger
+                    onClick={handleClick}
+                  >
                     Hacked
                   </Button>
-                </Link>
+
               </Space>
             </div>
           </Col>
