@@ -17,13 +17,6 @@ import "./home.css";
 const { Option } = Select;
 const { Title } = Typography;
 
-const style = {
-  background: "#5fb082",
-  padding: "8px 0",
-  height: "70vh",
-  paddingLeft: 120,
-  paddingTop: 70,
-};
 const handleWinrate = (value) => {
   localStorage.setItem("winrate", value);
 };
