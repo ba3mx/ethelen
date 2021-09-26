@@ -26,7 +26,6 @@ const style = {
 };
 const handleWinrate = (value) => {
   localStorage.setItem("winrate", value);
-  // console.log(e)
 };
 
 function Home() {

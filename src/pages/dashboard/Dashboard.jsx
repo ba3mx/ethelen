@@ -41,7 +41,7 @@ export default function Dashboard() {
       })
       .catch((err) => console.log(err));
   }, []);
-  console.log(transactionDate, "transactionDate >>");
+  
   useEffect(() => {
     createAPIEndpoint(ENDPIONTS.Deposite)
       .fetchAll()
@@ -50,7 +50,6 @@ export default function Dashboard() {
       })
       .catch((err) => console.log(err));
   }, []);
-  console.log(depoValue, "sdjflasifh");
 
   return (
     <>
