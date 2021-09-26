@@ -3,7 +3,8 @@ import axios from "axios";
 const BASE_URL = 'https://be-ethelen.herokuapp.com';
 
 export const ENDPIONTS = {
-    Deposite: 'deposite'
+    Deposite: 'deposite',
+    Transaction: 'transaction'
 }
 
 export const createAPIEndpoint = endpoint => {

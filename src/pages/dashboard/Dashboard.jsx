@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Image, Row, Col, Typography } from "antd";
+import Moment from "react-moment";
 import { createAPIEndpoint, ENDPIONTS } from "../../api";
 import Timer from "../../component/Timer";
+import "./dashboard.css";
 
 const { Title, Text } = Typography;
 const style = {
@@ -15,6 +17,7 @@ export default function Dashboard() {
   console.log(selectedWinrate);
   const [winrate] = useState(selectedWinrate);
   const [depoValue, setDepoValue] = useState([]);
+  const [transactionDate, setTransactionDate] = useState([]);
 
   var deposit = "";
   if (winrate === "68.9") {
@@ -31,6 +34,15 @@ export default function Dashboard() {
   }
 
   useEffect(() => {
+    createAPIEndpoint(ENDPIONTS.Transaction)
+      .fetchAll()
+      .then((res) => {
+        setTransactionDate(res.data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+  console.log(transactionDate, "transactionDate >>");
+  useEffect(() => {
     createAPIEndpoint(ENDPIONTS.Deposite)
       .fetchAll()
       .then((res) => {
@@ -38,29 +50,12 @@ export default function Dashboard() {
       })
       .catch((err) => console.log(err));
   }, []);
-  console.log(depoValue, "sdjflasifh")
+  console.log(depoValue, "sdjflasifh");
 
   return (
     <>
-      <div
-        style={{
-          backgroundColor: "#12291c",
-          paddingBottom: 30,
-          paddingLeft: 50,
-          paddingRight: 50,
-        }}
-      >
-        <div
-          style={{
-            minHeight: "30vh",
-            backgroundColor: "#0d120e",
-            justifyContent: "center",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            paddingTop: "50px",
-          }}
-        >
+      <div className="main__body">
+        <div className="header">
           <Title style={{ color: "#fff" }}>Slot Hacked</Title>
           <Image
             style={{ height: "200px", width: "200px" }}
@@ -68,9 +63,9 @@ export default function Dashboard() {
             src="https://img1.pngdownload.id/20180324/fzq/kisspng-2013-singapore-cyberattacks-anonymous-security-hac-anonymous-mask-5ab5d1467e8178.4964785115218650305182.jpg"
           />
         </div>
-        <Row gutter={16}>
+        <Row gutter={16} className="main__info">
           <Col className="gutter-row" span={4}>
-            <div style={style}>
+            <div style={style} className="main__info__items">
               <div
                 style={{
                   height: 200,
@@ -82,9 +77,14 @@ export default function Dashboard() {
                 }}
               >
                 <Title level={4}>EXPIRED CHEAT TANGGAL:</Title>
-                <Title level={4} style={{ color: "white" }}>
-                  25 Januari 2025
-                </Title>
+
+                {transactionDate.map((item, index) => (
+                  <Title key={index} level={4} style={{ color: "white" }}>
+                    <Moment format="DD MMMM YYYY" withTitle>
+                      {item.transactionDate}
+                    </Moment>
+                  </Title>
+                ))}
               </div>
               <div
                 style={{
@@ -104,8 +104,11 @@ export default function Dashboard() {
           </Col>
           <Col className="gutter-row" span={16}>
             <div
+              className="main__info__items"
               style={{
-                ...style,
+                background: "#5fb082",
+                padding: "8px 0",
+                height: "70vh",
                 justifyContent: "center",
                 alignItems: "center",
                 display: "flex",
@@ -116,23 +119,25 @@ export default function Dashboard() {
               <Title level={4}>Win Rate {winrate} MAXWIN</Title>
               <Title level={5}>Berlaku untuk ALL Games Slot</Title>
               <Title level={5}>
-                Untuk konfirmasi aktivasi Cheat Slot dengan Winrate 100%!
+                Konfirmasi aktivasi Cheat Slot dengan Winrate {winrate}!
               </Title>
               <Title level={5}>WAJIB DEPOSIT</Title>
               {depoValue.map((item, index) => (
-                <Text key= {index} style={{color: "#fff", fontWeight: 600}}>Rp.{ item.amount}.{deposit} </Text>
+                <Text key={index} style={{ color: "#fff", fontWeight: 600 }}>
+                  Rp.{item.amount}.{deposit}{" "}
+                </Text>
               ))}
-              {/* <Text>Rp.100.{deposit}</Text> */}
               <Title level={3}>Win Rate {winrate} MAXWIN</Title>
-              <Title level={3}>
+              <span className="main__info__detail">
                 SEMAKIN TINGGI ANGKA DEPOSIT SEMAKIN TINGGI KEMENANGAN YANG DI
                 DAPAT
-              </Title>
+              </span>
             </div>
           </Col>
 
           <Col className="gutter-row" span={4}>
             <div
+              className="main__info__items"
               style={{
                 backgroundColor: "#67f50a",
                 height: "70vh",
