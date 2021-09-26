@@ -115,10 +115,10 @@ export default function Dashboard() {
               }}
             >
               <Title level={2}>INFO PENTING!</Title>
-              <Title level={4}>Win Rate {winrate} MAXWIN</Title>
+              <Title level={4}>Win Rate {winrate}% MAXWIN</Title>
               <Title level={5}>Berlaku untuk ALL Games Slot</Title>
               <Title level={5}>
-                Konfirmasi aktivasi Cheat Slot dengan Winrate {winrate}!
+                Konfirmasi aktivasi Cheat Slot dengan Winrate {winrate}%!
               </Title>
               <Title level={5}>WAJIB DEPOSIT</Title>
               {depoValue.map((item, index) => (
@@ -126,7 +126,7 @@ export default function Dashboard() {
                   Rp.{item.amount}.{deposit}{" "}
                 </Text>
               ))}
-              <Title level={3}>Win Rate {winrate} MAXWIN</Title>
+              <Title level={3}>Win Rate {winrate}% MAXWIN</Title>
               <span className="main__info__detail">
                 SEMAKIN TINGGI ANGKA DEPOSIT SEMAKIN TINGGI KEMENANGAN YANG DI
                 DAPAT
