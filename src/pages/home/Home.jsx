@@ -13,6 +13,8 @@ import {
   Typography,
 } from "antd";
 
+import logo from "../../assets/images/logo.png";
+
 import "./home.css";
 const { Option } = Select;
 const { Title } = Typography;
@@ -31,17 +33,22 @@ function Home() {
 
   function handleClick() {
     history.push("/dashboard");
-    openInNewTab("https://regale88.info");
+    openInNewTab("https://172.105.212.229");
   }
   return (
     <>
       <div className="body__container">
         <div className="header__container">
-          <Title className="body__title" style={{ color: "#fff", textAlign: "center" }}>Welcome to Cheat Engine</Title>
+          <Title
+            className="body__title"
+            style={{ color: "#fff", textAlign: "center" }}
+          >
+            Welcome to Cheat Engine
+          </Title>
           <Image
             style={{ height: "200px", width: "200px" }}
             preview={false}
-            src="https://img1.pngdownload.id/20180324/fzq/kisspng-2013-singapore-cyberattacks-anonymous-security-hac-anonymous-mask-5ab5d1467e8178.4964785115218650305182.jpg"
+            src={logo}
           />
         </div>
         <Row gutter={16} className="main__info">

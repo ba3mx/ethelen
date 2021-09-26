@@ -5,6 +5,8 @@ import { createAPIEndpoint, ENDPIONTS } from "../../api";
 import Timer from "../../component/Timer";
 import "./dashboard.css";
 
+import logo from "../../assets/images/logo.png";
+
 const { Title, Text } = Typography;
 const style = {
   background: "#5fb082",
@@ -41,7 +43,7 @@ export default function Dashboard() {
       })
       .catch((err) => console.log(err));
   }, []);
-  
+
   useEffect(() => {
     createAPIEndpoint(ENDPIONTS.Deposite)
       .fetchAll()
@@ -59,7 +61,7 @@ export default function Dashboard() {
           <Image
             style={{ height: "200px", width: "200px" }}
             preview={false}
-            src="https://img1.pngdownload.id/20180324/fzq/kisspng-2013-singapore-cyberattacks-anonymous-security-hac-anonymous-mask-5ab5d1467e8178.4964785115218650305182.jpg"
+            src={logo}
           />
         </div>
         <Row gutter={16} className="main__info">
