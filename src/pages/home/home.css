@@ -14,6 +14,10 @@
     align-items: center;
     padding-top: 50px;
 }
+
+.body__title {
+    color: #fff;
+}
 .main__info__odd {
     background-color: #5fb082;
     padding: 8px 0;

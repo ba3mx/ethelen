@@ -37,7 +37,7 @@ function Home() {
     <>
       <div className="body__container">
         <div className="header__container">
-          <Title className="body__title" style={{ color: "#fff" }}>Welcome to Cheat Engine</Title>
+          <Title className="body__title" style={{ color: "#fff", textAlign: "center" }}>Welcome to Cheat Engine</Title>
           <Image
             style={{ height: "200px", width: "200px" }}
             preview={false}
