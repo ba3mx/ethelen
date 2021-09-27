@@ -1,60 +1,85 @@
 .body__container {
-    background-color: #12291c;
-    padding-bottom: 30px;
-}
-.body__title {
-    color: #fff;
-}
-.header__container {
-    min-height: 30vh;
-    background-color: #0d120e;
-    justify-content: center;
+    background-color: #020202;
+    padding: 50px;
     display: flex;
     flex-direction: column;
+    align-items: center;  
+    height: 100vh;
+}
+.header__container {
+    min-height: 40vh;
+    background-color: #F5F5F5;
+    justify-content: center;
+    display: flex !important;
+    flex-direction: column;
     align-items: center;
-    padding-top: 50px;
+    width: 70vw;
+    margin-bottom: 30px;
 }
-
-.body__title {
+.hack__login {
+    width: 400px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+}
+.hack__button {
+    background-color: #006400;
     color: #fff;
+    height: 35px;
+    border: 1px solid #023802;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
 }
-.main__info__odd {
-    background-color: #5fb082;
-    padding: 8px 0;
-    height: 70vh;
-    padding-left: 120px;
-    padding-top: 70px;
+.main__info {
+    display: flex;
+    justify-content: space-between;
+    width: 70vw;
+    align-items: center;
+}
+.hack__button:hover{
+    background-color: #F5F5F5;
+    color: #020202;
 }
 
-.main__info__items__mid {
-    background-color: #478562;
-    padding: 8px 0;
-    height: 70vh;
-    padding-left: 120px;
-    padding-top: 70px;
+.main__info__odd {
+    background-color: #F5F5F5;
+    height: 40vh;
+    padding-left: 10px;
+    padding-top: 30px;
+    width: 400px;
 }
+
 
 @media screen and (max-width: 750px) {
     .body__container {
+        height: auto;
         padding: 0;
     }
-    .body__title {
-        color: #fff;
+    .header__container{
+        width: 80vw;
+        padding: 10px;
+        margin-bottom: 20px;
     }
     .main__info {
-      display: flex !important;
-      flex-direction: column !important;
+      display: flex;
+      flex-direction: column ;
+      padding: 0;
+      margin: 0;
+      width: 100vw;
     }
     .main__info__odd {
-        width: 100vw;
-        height: 40vh !important;
-        background-color: #478562;
-        padding-top: 30px;
+        width: 80vw;
+        height: 40vh;
+        padding-left: 20px;
+        padding-top: 15px;
+        margin: 0;
+        margin-bottom: 20px;
     }
-    .main__info__items__mid {
-        width: 100vw;
-        height: 40vh !important;
-        background-color: #1a442c;
-        padding-top: 30px;
+    .hack__login {
+        width: 80%;
+        height: 100px;
+        display: flex;
+        flex-direction: column;
     }
   }
