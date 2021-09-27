@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Image, Row, Col, Typography } from "antd";
+import { Image,Typography } from "antd";
 import Moment from "react-moment";
 import { createAPIEndpoint, ENDPIONTS } from "../../api";
 import Timer from "../../component/Timer";
@@ -8,10 +8,8 @@ import "./dashboard.css";
 import logo from "../../assets/images/logo.png";
 
 const { Title, Text } = Typography;
-const style = {
-  background: "#5fb082",
-  padding: "8px 0",
-  height: "70vh",
+const color = {
+  color: "#fff",
 };
 
 export default function Dashboard() {
@@ -57,107 +55,86 @@ export default function Dashboard() {
     <>
       <div className="main__body">
         <div className="header">
-          <Title style={{ color: "#fff" }}>Slot Hacked</Title>
           <Image
-            style={{ height: "200px", width: "200px" }}
+            style={{
+              height: "300px",
+              width: "300px",
+              zIndex: -1,
+              marginTop: "-80px",
+              marginBottom: "-80px",
+            }}
             preview={false}
             src={logo}
           />
+          <Title level={2} style={{ color: "#006400", fontWeight: 800 }}>
+            SLOT HACKED
+          </Title>
         </div>
-        <Row gutter={16} className="main__info">
-          <Col className="gutter-row" span={4}>
-            <div style={style} className="main__info__items">
-              <div
-                style={{
-                  height: 200,
-                  backgroundColor: "ThreeDLightShadow",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  flexDirection: "column",
-                }}
-              >
-                <Title level={4}>EXPIRED CHEAT TANGGAL:</Title>
-
-                {transactionDate.map((item, index) => (
-                  <Title key={index} level={4} style={{ color: "white" }}>
-                    <Moment format="DD MMMM YYYY" withTitle>
-                      {item.transactionDate}
-                    </Moment>
-                  </Title>
-                ))}
-              </div>
-              <div
-                style={{
-                  marginTop: 50,
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  flexDirection: "column",
-                }}
-              >
-                <Title level={4}>TIME</Title>
-                <Title level={4} style={{ color: "white" }}>
-                  <Timer minutes={10} seconds={10} />
-                </Title>
-              </div>
-            </div>
-          </Col>
-          <Col className="gutter-row" span={16}>
-            <div
-              className="main__info__items"
-              style={{
-                background: "#5fb082",
-                padding: "8px 0",
-                height: "70vh",
-                justifyContent: "center",
-                alignItems: "center",
-                display: "flex",
-                flexDirection: "column",
-              }}
-            >
-              <Title level={2}>INFO PENTING!</Title>
-              <Title level={4}>Win Rate {winrate}% MAXWIN</Title>
-              <Title level={5}>Berlaku untuk ALL Games Slot</Title>
-              <Title level={5}>
-                Konfirmasi aktivasi Cheat Slot dengan Winrate {winrate}%!
+        <div
+          className="transaction"
+          style={{
+            backgroundColor: "#F5F5F5",
+            padding: "10px",
+            marginTop: "20px",
+            width: "70vw",
+          }}
+        >
+          <div className="transaction__date">
+            {transactionDate.map((item, index) => (
+              <Title className="transaction__date__item" key={index} level={5}>
+                EXPIRED CHEAT TANGGAL :
+                <div style={{marginLeft: 5}}>
+                <Moment format="DD MMM YYYY" withTitle>
+                  {item.transactionDate}
+                </Moment>
+                </div>
+                
               </Title>
-              <Title level={5}>WAJIB DEPOSIT</Title>
-              {depoValue.map((item, index) => (
-                <Text key={index} style={{ color: "#fff", fontWeight: 600 }}>
-                  Rp.{item.amount}.{deposit}{" "}
-                </Text>
-              ))}
-              <Title level={3}>Win Rate {winrate}% MAXWIN</Title>
-              <span className="main__info__detail">
-                SEMAKIN TINGGI ANGKA DEPOSIT SEMAKIN TINGGI KEMENANGAN YANG DI
-                DAPAT
-              </span>
-            </div>
-          </Col>
-
-          <Col className="gutter-row" span={4}>
-            <div
-              className="main__info__items"
-              style={{
-                backgroundColor: "#67f50a",
-                height: "70vh",
-                justifyContent: "center",
-                alignItems: "center",
-                display: "flex",
-                flexDirection: "column",
-              }}
+            ))}
+          </div>
+          <div className="timer">
+            <Title level={4} style={{ color: "white" }}>
+              TIME
+            </Title>
+            <Title level={4} style={{ color: "white" }}>
+              <Timer minutes={10} seconds={10} />
+            </Title>
+          </div>
+          <div className="main__info__items">
+            <Title level={2} style={{ ...color, fontSize: "36px" }}>
+              INFO PENTING!
+            </Title>
+            <Title level={4} style={{ ...color, fontSize: "20px" }}>
+              Win Rate {winrate}% MAXWIN
+            </Title>
+            <Title level={5} style={{ ...color, fontSize: "20px" }}>
+              Berlaku untuk ALL Games Slot
+            </Title>
+            <Title level={5} style={{ ...color, fontSize: "20px" }}>
+              WAJIB DEPOSIT
+            </Title>
+            {depoValue.map((item, index) => (
+              <Text key={index} style={{ color: "#fff", fontWeight: 800 }}>
+                Rp.{item.amount}.{deposit}{" "}
+              </Text>
+            ))}
+            <Title level={3} style={color}>
+              Win Rate {winrate}% MAXWIN
+            </Title>
+            <h2
+              className="main__info__detail"
+              style={{ ...color, fontWeight: 600 }}
             >
-              <Title level={3}>JANGAN TUTUP</Title>
-              <Title level={3}>CHEAT</Title>
-              <Title level={3}>ENGINE SLOT</Title>
-              <Title level={3}>SAAT BERMAIN</Title>
-              <Title level={3}>AGAR</Title>
-              <Title level={3}>CHEAT</Title>
-              <Title level={3}>TETAP AKTIF</Title>
-            </div>
-          </Col>
-        </Row>
+              SEMAKIN TINGGI ANGKA DEPOSIT SEMAKIN TINGGI KEMENANGAN YANG DI
+              DAPAT
+            </h2>
+          </div>
+          <div className="warning">
+            <Title level={3} style={color}>
+              JANGAN TUTUP CHEAT ENGINE SLOT SAAT BERMAIN AGAR CHEAT TETAP AKTIF
+            </Title>
+          </div>
+        </div>
       </div>
     </>
   );

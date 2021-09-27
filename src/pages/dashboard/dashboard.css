@@ -1,33 +1,111 @@
 .main__body  {
-    background-color: #12291c;
-    padding-bottom: 30px;
-    padding-left: 50px;
-    padding-right: 50px;
+    background-color: #020202;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 .header {
-    min-height: 30vh;
-    background-color: #0d120e;
-    justify-content: center;
+    width: 70vw;
+    height: 30vh;
+    background-color: #F5F5F5;
     display: flex;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
     padding-top: 50px;
 }
+.transaction {
+    background-color: #F5F5F5;
+    padding: 10px;
+    margin-top: 20px;
+    width: 70vw;
+}
+.transaction__date {
+    height: 50px;
+    width: 69vw;
+    background-color: #588806;
+    display: flex;
+    justify-content: center;
+}
+.transaction__date__item {
+   text-transform: uppercase;
+   color: white !important;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.timer {
+    margin-top: 5px;
+    display: flex;
+    width: 69vw;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #020202;
+} 
 
+.main__info__items {
+    background: #020202;
+    padding: 8px 0;
+    height: 70vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+}
+.warning {
+    background: #588806;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+}
 @media screen and (max-width: 750px) {
-    .main__body {
+    .header {
+        width: 95vw;
         padding: 0;
+
+    }
+    .main__body {
+        padding: 5px;
+        width: auto;
+        align-items: start;
+    }
+    .transaction {
+        width: 95vw !important;
+        padding: 5px;
+    }
+    .transaction__date {
+        width: 90vw;
+        display: flex;
+    }
+    .timer {
+        width: 90vw;
     }
     .main__info {
       display: flex !important;
       flex-direction: column !important;
     }
     .main__info__items {
-        width: 100vw;
-        min-height: 75vh;
+        width: 90vw;
+        height: auto;
     }
     .main__info__detail {
-        font-size: medium;
+        font-size: large;
         text-align: center;
+        max-width: 200px;
+        font-weight: 600 !important ;
+
+    }
+    .warning {
+        height: 150px;
+        text-align: center;
+        font-size: 14px;    
+        width: 90vw;
     }
   }
