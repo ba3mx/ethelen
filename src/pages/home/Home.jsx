@@ -32,8 +32,10 @@ function Home() {
 
   function handleClick() {
     var inputValue = document.getElementById("input").value;
+    var cheatValue = document.getElementsByClassName("cheat_enginee");
+    console.log(cheatValue, "chesarl");
     if(inputValue.length <= 5) {
-      alert("input username longer")
+      alert("username minimal 6  huruf")
     }
     if(inputValue.length > 5) {
       history.push("/dashboard");
@@ -50,7 +52,7 @@ function Home() {
                 height: "300px",
                 width: "300px",
                 zIndex: -1,
-                marginTop: "-80px",
+                marginTop: "-70px",
                 marginBottom: "-80px",
               }}
               preview={false}
@@ -80,9 +82,10 @@ function Home() {
               CHEAT ENGINE
             </Title>
             <Checkbox.Group
-              style={{ width: "100%", padding: "20px" }}
+              style={{ width: "100%", paddingLeft: "20px" }}
               onChange=""
               gutter={10}
+              
             >
               <Row>
                 <Col span={24}>
@@ -109,7 +112,7 @@ function Home() {
             <Title level={3} style={{ color: "#333333" }}>
               PROVIDER SLOT
             </Title>
-            <Radio.Group style={{ width: "100%", padding: "20px" }}>
+            <Radio.Group style={{ width: "100%", paddingLeft: "20px"}}>
               <Space direction="vertical">
                 <Radio value="Pragmatic Play">Pragmatic Play</Radio>
                 <Radio value="Habanero">Habanero</Radio>
