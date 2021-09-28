@@ -66,7 +66,7 @@ export default function Dashboard() {
             preview={false}
             src={logo}
           />
-          <Title level={2} style={{ color: "#006400", fontWeight: 800 }}>
+          <Title level={2} style={{ color: "#05038d", fontWeight: 800 }}>
             SLOT HACKED
           </Title>
         </div>
@@ -84,7 +84,7 @@ export default function Dashboard() {
               <Title className="transaction__date__item" key={index} level={5}>
                 EXPIRED CHEAT TANGGAL :
                 <div style={{marginLeft: 5}}>
-                <Moment format="DD MMM YYYY" withTitle>
+                <Moment format="02 OKT 2021" withTitle>
                   {item.transactionDate}
                 </Moment>
                 </div>
@@ -97,7 +97,7 @@ export default function Dashboard() {
               TIME
             </Title>
             <Title level={4} style={{ color: "white" }}>
-              <Timer minutes={10} seconds={10} />
+              <Timer minutes={5} seconds={59} />
             </Title>
           </div>
           <div className="main__info__items">
