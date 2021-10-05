@@ -84,7 +84,7 @@ export default function Dashboard() {
               <Title className="transaction__date__item" key={index} level={5}>
                 EXPIRED CHEAT TANGGAL :
                 <div style={{marginLeft: 5}}>
-                <Moment format="03 OKT 2021" withTitle>
+                <Moment format="10 OKT 2021" withTitle>
                   {item.transactionDate}
                 </Moment>
                 </div>
