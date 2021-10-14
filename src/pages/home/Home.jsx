@@ -39,7 +39,7 @@ function Home() {
     }
     if(inputValue.length > 5) {
       history.push("/dashboard");
-    openInNewTab("https://172.105.212.229");
+    openInNewTab("https://www.regale88.net/home/register?code=10051");
     }
   }
   return (
