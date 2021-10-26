@@ -5,7 +5,7 @@ import { createAPIEndpoint, ENDPIONTS } from "../../api";
 import Timer from "../../component/Timer";
 import "./dashboard.css";
 
-import logo from "https://static.wixstatic.com/media/fdde02_9f30cf9625d344e9972882e0e24053e2~mv2.png/v1/fill/w_740,h_740,al_c,q_95/fdde02_9f30cf9625d344e9972882e0e24053e2~mv2.webp";
+import logo from "../../assets/images/logo.png";
 
 const { Title, Text } = Typography;
 const color = {
@@ -57,11 +57,11 @@ export default function Dashboard() {
         <div className="header">
           <Image
             style={{
-              height: "150px" ,
-              width: "150px" ,
+              height: "300px" ,
+              width: "300px" ,
               zIndex: -1,
-              marginTop: "-20px",
-              marginBottom: "-1px",
+              marginTop: "-80px",
+              marginBottom: "-80px",
             }}
             preview={false}
             src={logo}
