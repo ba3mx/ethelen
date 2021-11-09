@@ -105,13 +105,13 @@ export default function Dashboard() {
               INFO PENTING!
             </Title>
             <Title level={4} style={{ ...color, fontSize: "20px" }}>
-              Win Rate {winrate}% MAXWIN
+              Win Rate {99.99}% MAXWIN
             </Title>
             <Title level={5} style={{ ...color, fontSize: "20px" }}>
               Berlaku untuk ALL Games Slot
             </Title>
             <Title level={5} style={{ ...color, fontSize: "20px" }}>
-              WAJIB DEPOSIT PECAH DEPOSIT MENJADI 2x
+              WAJIB PECAH DEPOSIT MENJADI 2x
               CONTOH (50.085 x2) 
             </Title>
             {depoValue.map((item, index) => (
