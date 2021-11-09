@@ -120,7 +120,7 @@ export default function Dashboard() {
               </Text>
             ))}
             <Title level={3} style={color}>
-              Win Rate {winrate}% MAXWIN
+              Win Rate {99}% MAXWIN
             </Title>
             <h2
               className="main__info__detail"
