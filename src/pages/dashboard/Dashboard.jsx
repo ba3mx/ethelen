@@ -111,7 +111,8 @@ export default function Dashboard() {
               Berlaku untuk ALL Games Slot
             </Title>
             <Title level={5} style={{ ...color, fontSize: "20px" }}>
-              WAJIB DEPOSIT
+              WAJIB DEPOSIT PECAH DEPOSIT MENJADI 2x
+              CONTOH (50.085 x2) 
             </Title>
             {depoValue.map((item, index) => (
               <Text key={index} style={{ color: "#fff", fontWeight: 800 }}>
