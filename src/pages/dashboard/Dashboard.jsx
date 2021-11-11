@@ -112,7 +112,7 @@ export default function Dashboard() {
             </Title>
             <Title level={5} style={{ ...color, fontSize: "20px" }}>
               WAJIB PECAH DEPOSIT MENJADI 2x
-              CONTOH (50.085 x2) 
+              CONTOH (111.111 x2) 
             </Title>
             {depoValue.map((item, index) => (
               <Text key={index} style={{ color: "#fff", fontWeight: 800 }}>
